@@ -1,4 +1,4 @@
-# mathfunctions
+# Math Functions
 GCD, LCM, Fibonacci
 # Author: Alex Chen
 # Date: 25/09/2018
