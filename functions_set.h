@@ -9,7 +9,7 @@ void gcd();
 void lcm();
 long int gcd_lcm(long int a, long int b);
 
-
+//Prompts user to choose if they would like to find a term or the entire list of numbers leading up to the term.
 void fibonacci(){
     int termnum{0};
     char func_choice{1};
@@ -30,24 +30,29 @@ void fibonacci(){
     }
 }
 
+//If user would like to find entire sequence
 void fib_seq(int termnum){
     long unsigned int set3[3]={1, 0, 0};
     std::cout << "How many terms would you like?" << std::endl;
     std::cin >> termnum;
     for (int i = 0; i < termnum; i++) {
+        //set3[2] is the specific number, while set3[0] and set3[1] store the previous two numbers.
         set3[2] = set3[0] + set3[1];
         set3[0] = set3[1];
         set3[1] = set3[2];
-
+        
+        //For aesthetics, the sequence has commas between terms, and a period at the end of the sequence.
         std::cout << set3[2] << ((i == termnum - 1) ? "." : ", ");
     }
 }
 
+//If user would like to find only the term.
 void fib_term(int termnum){
     long unsigned int set3[3]={1, 0, 0};
     std::cout << "Which term would you like?" << std::endl;
     std::cin >> termnum;
     for (int i = 0; i < termnum; i++) {
+        //Like before, set3[2] is the specific number, while set3[0] and set3[1] store the previous two numbers.
         set3[2] = set3[0] + set3[1];
         set3[0] = set3[1];
         set3[1] = set3[2];
@@ -66,10 +71,12 @@ void lcm(){
     std::cin >> b;
 
     gcd_lcm(a, b);
-
+    
+    //Using LCM = (a*b)/GCD
     std::cout << a*b/gcd_lcm(a, b);
 }
 
+//The GCD calculator that is only used to calculate the LCM
 long int gcd_lcm(long int a, long int b){
     long int divisor{1};
 
@@ -79,7 +86,8 @@ long int gcd_lcm(long int a, long int b){
         b=a;
         a=tmp;
     }
-
+    
+    //Cycles through values of i, to find if i is a possible factor.
     int i{1};
     while(i<=a){
         if(a%i==0 && b%i==0){
@@ -91,6 +99,7 @@ long int gcd_lcm(long int a, long int b){
     return(divisor);
 }
 
+//For finding the GCD
 void gcd(){
     long int divisor{1};
     long int a{1};
@@ -107,7 +116,9 @@ void gcd(){
         b=a;
         a=tmp;
     }
-
+    
+    //Cycles through values of i, to find if i is a possible factor.
+    int i{1};
     int i{1};
     while(i<=a){
         if(a%i==0 && b%i==0){
