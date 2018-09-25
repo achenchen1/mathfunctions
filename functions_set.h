@@ -131,6 +131,7 @@ void gcd(){
     std::cout << divisor;
 }
 
+//If user would like to round
 void round(){
     long double user_double{0};
     long int user_input{0};
