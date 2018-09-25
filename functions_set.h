@@ -8,6 +8,7 @@ void fib_term(int termnum);
 void gcd();
 void lcm();
 long int gcd_lcm(long int a, long int b);
+void round();
 
 //Prompts user to choose if they would like to find a term or the entire list of numbers leading up to the term.
 void fibonacci(){
@@ -130,4 +131,16 @@ void gcd(){
     std::cout << divisor;
 }
 
+void round(){
+    long double user_double{0};
+    long int user_input{0};
+
+    std::cout << "Enter the number you would like rounded:" << std::endl;
+    std::cin >> user_double;
+    user_input = (long int)(user_double+0.5);
+
+    std::cout << user_input;
+}
+
+#endif
 #endif
