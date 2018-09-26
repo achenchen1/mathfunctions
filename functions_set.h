@@ -142,4 +142,26 @@ void round(){
     std::cout << user_input;
 }
 
+//Finds sequence according to the Collatz hypothesis, where given any positive integer and the following rules:
+// if it's odd, multiply by 3 and add one
+// if it's even, divide by 2
+//and repeating this process, it will eventually terminate in the sequence "..., 4, 2, 1."
+void collatz(){
+    unsigned long int user_input{0};
+    std::cin >> user_input;
+    while(user_input != 2) {
+        if (user_input == 0) {
+            std::cout << "n/a";
+        } else if (user_input % 2 == 0) {
+            user_input /= 2;
+        } else {
+            user_input = user_input * 3 + 1;
+        }
+        std::cout << user_input << ", ";
+    }
+
+    std::cout << "1.";
+}
+
+
 #endif
