@@ -4,7 +4,7 @@
 
 int main(){
     char user_input;
-    std::cout << "Possible functions: 'f' for Fibonacci, 'g' for GCD, 'l' for LCM, 'c' for Collatz, and 'r' for rounding.";
+    std::cout << "Possible functions: 'f' for Fibonacci, 'g' for GCD, 'l' for LCM, 'c' for Collatz, and 'r' for rounding. ";
     std::cout << "Choose a function." << std::endl;
 
     std::cin >> user_input;
