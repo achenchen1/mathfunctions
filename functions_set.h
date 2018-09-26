@@ -120,7 +120,6 @@ void gcd(){
     
     //Cycles through values of i, to find if i is a possible factor.
     int i{1};
-    int i{1};
     while(i<=a){
         if(a%i==0 && b%i==0){
             divisor=i;
@@ -143,5 +142,4 @@ void round(){
     std::cout << user_input;
 }
 
-#endif
 #endif
