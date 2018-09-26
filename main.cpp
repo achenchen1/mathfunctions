@@ -4,7 +4,8 @@
 
 int main(){
     char user_input;
-    std::cout << "What would you like to calculate today? Enter 'f' for Fibonacci functions, 'g' for Greatest Common Divisors, 'r' for rounding, and 'l' for Lowest Common Multiple. " << std::endl;
+    std::cout << "Possible functions: 'f' for Fibonacci, 'g' for GCD, 'l' for LCM, 'c' for Collatz, and 'r' for rounding.";
+    std::cout << "Choose a function." << std::endl;
 
     std::cin >> user_input;
     //As prompted by user, finds GCD.
@@ -28,6 +29,12 @@ int main(){
     //Rounding.
     else if(user_input == 'r' || user_input == 'R'){
         round();
+        std::cout << std::endl;
+    }
+    
+    //Collatz
+    else if(user_input == 'c' || user_input == 'C'){
+        collatz();
         std::cout << std::endl;
     }
     
