@@ -82,17 +82,10 @@ void lcm(){
 //The GCD calculator that is only used to calculate the LCM
 long int gcd_lcm(long int a, long int b){
     long int divisor{1};
-
-    if(a>b){
-        long int tmp;
-        tmp=b;
-        b=a;
-        a=tmp;
-    }
     
     //Cycles through values of i, to find if i is a possible factor.
     int i{1};
-    while(i<=a){
+    while(i<=a && i<=b){
         if(a%i==0 && b%i==0){
             divisor=i;
         }
@@ -112,17 +105,10 @@ void gcd(){
     std::cin >> a;
     std::cout << "Enter your second number: " << std::endl;
     std::cin >> b;
-
-    if(a>b){
-        long int tmp;
-        tmp=b;
-        b=a;
-        a=tmp;
-    }
     
     //Cycles through values of i, to find if i is a possible factor.
     int i{1};
-    while(i<=a){
+    while(i<=a && i<=b){
         if(a%i==0 && b%i==0){
             divisor=i;
         }
