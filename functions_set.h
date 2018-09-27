@@ -1,4 +1,6 @@
 #include <iostream>
+#include <cmath>
+
 #ifndef MATH_MATH_H
 #define MATH_MATH_H
 
@@ -163,5 +165,33 @@ void collatz(){
     std::cout << "1.";
 }
 
+//Flips a number, and tells the user whether or not their number is a palindrome
+void palindrome(){
+    long int result{0};
+    long int reverse{0};
+    long int i{0};
 
+    long int user_input;
+    std::cout << "Please enter the number you would like flipped: " << std::endl;
+    std::cin >> user_input;
+
+    long int digits;
+    digits = int(log10(user_input)+1);
+
+    while(i<digits) {
+        //Turns user_input to a number between 0 and 10, and returns the integer value of the ones digit.
+        result = user_input/int((pow(10, i))) % int((pow(10,1)));
+        i++;
+        reverse = reverse + result*int(pow(10, digits-i));
+    }
+
+    std::cout << reverse << std::endl;
+    if(user_input == reverse){
+        std::cout << "Your number is a palindrome!";
+    }
+    else{
+        std::cout << "Your number is NOT a palindrome!";
+    }
+
+}
 #endif
