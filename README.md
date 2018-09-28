@@ -1,5 +1,4 @@
 # Math Functions
-GCD, LCM, Fibonacci
+GCD, LCM, Fibonacci, primes, palindrome, Collatz
 # Author: Alex Chen
-# Date: 25/09/2018
-# Version: 1.0
+# Date: 28/09/2018
