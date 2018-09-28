@@ -1,9 +1,7 @@
-#include <iostream>
-#include <cmath>
-
 #ifndef MATH_MATH_H
 #define MATH_MATH_H
-
+#include <iostream>
+#include <cmath>
 /**********************************************************************************************************************/
 //Function declarations
 void collatz(unsigned long int user_input);
