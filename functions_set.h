@@ -190,13 +190,4 @@ bool primebool(long int user_input){
     return(true);
 }
 
-//If user would like to round
-void round_1(long double user_double){
-    long int user_input{0};
-
-    user_input = (long int)(user_double+0.5);
-
-    std::cout << user_input;
-}
-
 #endif
