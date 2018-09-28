@@ -15,7 +15,6 @@ void palindrome(long int user_input);
 bool prime(long unsigned int user_input);
 void primerange(long int input1, long int input2);
 bool primebool(long int user_input);
-void round_1(long double user_double);
 /**********************************************************************************************************************/
 
 //Finds sequence according to the Collatz hypothesis, where given any positive integer and the following rules:
