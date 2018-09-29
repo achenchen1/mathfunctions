@@ -4,7 +4,7 @@
 #include <cmath>
 /**********************************************************************************************************************/
 //Function declarations
-void collatz(unsigned long int user_input);
+void collatz(long int user_input);
 void fibonacci(int termnum);
 void fib_seq(int termnum);
 void fib_term(int termnum);
@@ -21,19 +21,24 @@ bool primebool(long int user_input);
 // if it's odd, multiply by 3 and add one
 // if it's even, divide by 2
 //and repeating this process, it will eventually terminate in the sequence "..., 4, 2, 1."
-void collatz(unsigned long int user_input){
-    while(user_input != 2) {
-        if (user_input == 0) {
-            std::cout << "n/a";
-        } else if (user_input % 2 == 0) {
-            user_input /= 2;
-        } else {
-            user_input = user_input * 3 + 1;
-        }
-        std::cout << user_input << ", ";
+void collatz(long int user_input) {
+    if(user_input <= 0){
+        std::cout << "Please enter a positive integer.";
     }
-
-    std::cout << "1.";
+    else if(user_input <= 2 || user_input == 4){
+        std::cout << "Your number is already a terminal.";
+    }
+    else {
+        while (user_input > 2 && user_input != 4) {
+            if (user_input % 2 == 0) {
+                user_input /= 2;
+            } else {
+                user_input = user_input * 3 + 1;
+            }
+            std::cout << user_input << ", ";
+        }
+    }
+}::cout << "1.";
 }
 
 //Prompts user to choose if they would like to find a term or the entire list of numbers leading up to the term.
