@@ -24,7 +24,7 @@ void collatz(long int user_input) {
 }
 
 //Prompts user to choose if they would like to find a term or the entire list of numbers leading up to the term.
-void fibonacci(int termnum){
+void fibonacci(long int termnum){
     std::string func_choice{1};
 
     std::cout << "Would you like to find the term or the sequence leading up to it? \'s\' for the sequence,";
@@ -45,7 +45,7 @@ void fibonacci(int termnum){
 }
 
 //If user would like to find entire sequence
-void fib_seq(int termnum){
+void fib_seq(long int termnum){
     long unsigned int set3[3]={1, 0, 0};
     for (int i = 0; i < termnum; i++) {
         //set3[2] is the specific number, while set3[0] and set3[1] store the previous two numbers.
@@ -59,7 +59,7 @@ void fib_seq(int termnum){
 }
 
 //If user would like to find only the term.
-void fib_term(int termnum){
+void fib_term(long int termnum){
     long unsigned int set3[3]={1, 0, 0};
     for (int i = 0; i < termnum; i++) {
         //Like before, set3[2] is the specific number, while set3[0] and set3[1] store the previous two numbers.
