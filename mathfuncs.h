@@ -5,9 +5,9 @@
 /**********************************************************************************************************************/
 //Function declarations
 void collatz(long int user_input);
-void fibonacci(int termnum);
-void fib_seq(int termnum);
-void fib_term(int termnum);
+void fibonacci(long int termnum);
+void fib_seq(long int termnum);
+void fib_term(long int termnum);
 void gcd(long int a, long int b);
 long int gcd_lcm(long int a, long int b);
 void lcm(long int a, long int b);
