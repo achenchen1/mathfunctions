@@ -2,8 +2,6 @@
 #define MATH_FUNCS_H
 #include <iostream>
 #include <cmath>
-/**********************************************************************************************************************/
-//Function declarations
 void collatz(long int user_input);
 void fibonacci(long int termnum);
 void fib_seq(long int termnum);
@@ -15,5 +13,4 @@ void palindrome(long int user_input);
 bool prime(long unsigned int user_input);
 void primerange(long int input1, long int input2);
 bool primebool(long int user_input);
-/**********************************************************************************************************************/
 #endif
