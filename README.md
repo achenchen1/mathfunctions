@@ -7,10 +7,10 @@ Date: 29/09/2018
 
 ### v 2.0 (29/09/2018)
 
--Added special cases where user input is 4, 2, or 1 for Collatz
+* Added special cases where user input is 4, 2, or 1 for Collatz
 
--Reorganized header file
+* Reorganized header file
 
--Improved prime functions
+* Improved prime functions
 
--Made parameters more consistent
+* Made parameters more consistent
