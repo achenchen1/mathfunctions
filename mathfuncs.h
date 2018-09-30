@@ -1,5 +1,5 @@
-#ifndef MATH_MATH_H
-#define MATH_MATH_H
+#ifndef MATH_FUNCS_H
+#define MATH_FUNCS_H
 #include <iostream>
 #include <cmath>
 /**********************************************************************************************************************/
