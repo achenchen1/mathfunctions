@@ -1,5 +1,10 @@
 #include "functions_set.h"
 
+/**********************************************************
+Demos all functions contained in functions_set.h; functions 
+that call other functions (e.g. fibonacci(long int termnum)
+are not included here, but all other functions are demoed.
+ **********************************************************/
 int main(){
     //Sequences and special functions
     std::cout << "These are for sequences and special functions." << std::endl;
