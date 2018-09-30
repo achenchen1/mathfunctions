@@ -1,4 +1,4 @@
-#include "functions_set.h"
+#include "mathfuncs.h"
 
 int main(){
     
