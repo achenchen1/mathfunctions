@@ -71,6 +71,30 @@ void fib_term(long int termnum){
     std::cout << set3[2];
 }
 
+//Prints out all the possible ways where a number can be made with the sum of consecutive positive integers.
+void friendly(long unsigned user_input) {
+    int i{1};
+    while (i * i / 2 < user_input) {
+        long int down = (user_input / i - i / 2);
+        long int up = (user_input / i + i / 2);
+
+        if (i % 2 == 0 && user_input % i != 0 && 2 * user_input % i == 0) {
+            while (down < up - 1) {
+                std::cout << down + 1 << " + ";
+                down++;
+            }
+            std::cout << up << std::endl;
+        } else if (i % 2 == 1 && user_input % i == 0) {
+            while (down < up) {
+                std::cout << down << " + ";
+                down++;
+            }
+            std::cout << up << std::endl;
+        }
+        i++;
+    }
+}
+
 //For finding the GCD
 void gcd(long int a, long int b){
     long int divisor{1};
