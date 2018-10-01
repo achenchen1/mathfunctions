@@ -100,6 +100,19 @@ void friendly(long unsigned user_input) {
     }
 }
 
+//Will count how many friendly sequences there are, but will not display them.
+void friendly_counter(long unsigned int user_input) {
+    int result{0};
+    for(int i = 2; i * i / 2 < user_input; i++) {
+        if (i % 2 == 0 && user_input % i != 0 && 2 * user_input % i == 0) {
+            result=result+1;
+        } else if (i % 2 == 1 && user_input % i == 0) {
+            result=result+1;
+        }
+    }
+    std::cout << result;
+}
+
 //For finding the GCD
 void gcd(long int a, long int b){
     long int divisor{1};
