@@ -7,6 +7,7 @@ void fibonacci(long int termnum);
 void fib_seq(long int termnum);
 void fib_term(long int termnum);
 void friendly(long unsigned int user_input);
+void friendly_counter(long unsigned int user_input);
 void gcd(long int a, long int b);
 long int gcd_lcm(long int a, long int b);
 void lcm(long int a, long int b);
