@@ -77,14 +77,19 @@ void friendly(long unsigned user_input) {
     while (i * i / 2 < user_input) {
         long int down = (user_input / i - i / 2);
         long int up = (user_input / i + i / 2);
-
-        if (i % 2 == 0 && user_input % i != 0 && 2 * user_input % i == 0) {
+        
+        //For even numbers, when the user_input is divided by i, it must a return 5 in the tenths digit, i.e. n+0.5
+        //(n represents an integer)
+        //2*user_input%i instructs it to only look at quotients with 0.5, eliminating some exceptions such as n+0.75
+        if (i%2 == 0 && user_input%i != 0 && 2*user_input%i == 0) {
             while (down < up - 1) {
                 std::cout << down + 1 << " + ";
                 down++;
             }
-            std::cout << up << std::endl;
-        } else if (i % 2 == 1 && user_input % i == 0) {
+            std::cout << up << std::endl;  
+        } 
+        //Odd numbers take less work; as long as user_input is divisible, then there is a sequence
+        else if (i % 2 == 1 && user_input % i == 0) {
             while (down < up) {
                 std::cout << down << " + ";
                 down++;
