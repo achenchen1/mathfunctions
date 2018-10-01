@@ -72,6 +72,7 @@ void fib_term(long int termnum){
 }
 
 //Prints out all the possible ways where a number can be made with the sum of consecutive positive integers.
+//Note: user_input as a 1-term friendly sequence is not counted. 
 void friendly(long unsigned user_input) {
     int i{1};
     while (i * i / 2 < user_input) {
