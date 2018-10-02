@@ -1,3 +1,5 @@
+# Change log
+
 ## v 1.00 (01/10/2018)
 
 * Eliminated some intermediary functions
