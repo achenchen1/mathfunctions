@@ -25,29 +25,19 @@ void Sequences::collatz(long int terminalnumber){
 
 //If user would like to find entire sequence
 void Sequences::fib_seq(long int terminalnumber){
-    long unsigned int set3[3]={1, 0, 0};
-    for (int i = 0; i < terminalnumber; i++) {
-        //set3[2] is the specific number, while set3[0] and set3[1] store the previous two numbers.
-        set3[2] = set3[0] + set3[1];
-        set3[0] = set3[1];
-        set3[1] = set3[2];
-
-        //For aesthetics, the sequence has commas between terms, and a period at the end of the sequence.
-        std::cout << set3[2] << ((i == terminalnumber - 1) ? "." : ", ");
+    for(int i = 1; i <= terminalnumber; i++){
+        std::cout << fib_term(i) << " ";
     }
 }
 
 //If user would like to find only the term.
 long unsigned int Sequences::fib_term(long int terminalnumber){
-    long unsigned int set3[3]={1, 0, 0};
-    for (int i = 0; i < terminalnumber; i++) {
-        //Like before, set3[2] is the specific number, while set3[0] and set3[1] store the previous two numbers.
-        set3[2] = set3[0] + set3[1];
-        set3[0] = set3[1];
-        set3[1] = set3[2];
+    if(terminalnumber==1 or terminalnumber == 2){
+        return(1);
     }
-
-    return(set3[2]);
+    else {
+        return(fib_term(terminalnumber - 1) + fib_term(terminalnumber - 2));
+    }
 }
 
 //Prints out all the possible ways where a number can be made with the sum of consecutive positive integers.
