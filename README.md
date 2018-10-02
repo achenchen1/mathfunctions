@@ -3,7 +3,15 @@ Finds the Collatz Sequence, the Fibonacci Sequence with a given number of terms,
 
 #### Author: Alex Chen
 
-#### Date: 29/09/2018
+#### Last revised: 01/10/2018
+
+## v 2.01(01/10/2018)
+
+* Reformatted demo file
+
+* Added "Friendly" numbers
+
+* Improved formatting on Palindrome function.
 
 ## v 2.0 (29/09/2018)
 
