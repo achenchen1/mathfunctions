@@ -21,6 +21,9 @@ class Nums {
 public:
     long int gcd(long int num1, long int num2);
     long int lcm(long int num1, long int num2);
+    long double amean(unsigned int quantnum);
+    long double gmean(unsigned int quantnum);
+    long double hmean(unsigned int quantnum);
 };
 
 class Primes {
