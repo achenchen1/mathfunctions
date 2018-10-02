@@ -4,24 +4,23 @@
 #include <cmath>
 class Sequences {
 public:
-    void fibonacci(long int terminalnumber);
     void fib_seq(long int terminalnumber);
-    void fib_term(long int terminalnumber);
+    long unsigned int fib_term(long int terminalnumber);
     void collatz(long int terminalnumber);
 };
 
 class Misc {
 public:
     void friendly(long unsigned int user_input);
-    void friendly_counter(long unsigned int user_input);
-    void palindrome(long int user_input);
+    int friendly_counter(long unsigned int user_input);
+    long int reverse(long int user_input);
+    bool palindrome(long int user_input);
 };
 
 class Nums {
 public:
-    void gcd(long int num1, long int num2);
-    long int gcd_lcm(long int num1, long int num2);
-    void lcm(long int num1, long int num2);
+    long int gcd(long int num1, long int num2);
+    long int lcm(long int num1, long int num2);
 };
 
 class Primes {
