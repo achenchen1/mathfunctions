@@ -1,5 +1,9 @@
 # Change log
 
+## v 1.03 (01/11/2018)
+
+* Optimized Fibonacci functions using recursion
+
 ## v 1.02 (01/11/2018)
 
 * Now calculates harmonic, geometric, and arithmetic mean
