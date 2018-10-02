@@ -163,7 +163,7 @@ long double Nums::gmean(unsigned int quantnum){
         std::cin >> user_input;
         product = product * user_input;
     }
-    
+
     return(pow(product, 1.0/quantnum));
 }
 
@@ -185,7 +185,7 @@ long double Nums::hmean(unsigned int quantnum){
 }
 
 //Identifies if input is prime or not
-bool Primes::prime(long unsigned int prime1){
+bool Nums::prime(long unsigned int prime1){
     int i{1};
     if(prime1 == 1){
         return(false);
@@ -203,7 +203,7 @@ bool Primes::prime(long unsigned int prime1){
 }
 
 //Using primebool, returns primes within range
-void Primes::primerange(long int prime1, long int prime2){
+void Nums::primerange(long int prime1, long int prime2){
     while(prime1 <= prime2) {
         if(primebool(prime1)) {
             std::cout << prime1 << std::endl;
@@ -213,7 +213,7 @@ void Primes::primerange(long int prime1, long int prime2){
 }
 
 //Returns a bool to whether input is prime or not
-bool Primes::primebool(long int prime1){
+bool Nums::primebool(long int prime1){
     int i{1};
     if(prime1%2 == 0){
         return(false);
