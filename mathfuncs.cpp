@@ -112,13 +112,9 @@ long int Misc::reverse(long int user_input) {
     return(reverse);
 }
 
-bool Misc::palindrome(long int user_input){
-    if(Misc::reverse(user_input) == user_input){
-        return(true);
-    }
-    else{
-        return(false);
-    }
+//Determines whether or not your number is a palindrome
+bool Misc::palindrome(long int user_input) {
+    return(reverse(user_input) == user_input);
 }
 
 //The GCD calculator
