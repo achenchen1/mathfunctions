@@ -85,9 +85,10 @@ int Misc::friendly_counter(long unsigned int user_input) {
     int result{0};
     for(int i = 2; i * i / 2 < user_input; i++) {
         if (i % 2 == 0 && user_input % i != 0 && 2 * user_input % i == 0) {
-            result=result+1;
-        } else if (i % 2 == 1 && user_input % i == 0) {
-            result=result+1;
+            result = result + 1;
+        }
+        else if (i % 2 == 1 && user_input % i == 0) {
+            result = result + 1;
         }
     }
     return(result);
@@ -138,6 +139,49 @@ long int Nums::lcm(long int num1, long int num2){
 
     //Using LCM = (a*b)/GCD
     return(num1*num2/gcd(num1, num2));
+}
+
+//Takes arithmetic mean
+long double Nums::amean(unsigned int quantnum){
+    double user_input{1};
+    double sum{0};
+
+    for(int i = 0; i < quantnum; i++){
+        std::cin >> user_input;
+        sum = sum + user_input;
+    }
+
+    return(sum/quantnum);
+}
+
+//Takes geometric mean
+long double Nums::gmean(unsigned int quantnum){
+    double user_input{1};
+    double product{1};
+
+    for(int i = 0; i < quantnum; i++){
+        std::cin >> user_input;
+        product = product * user_input;
+    }
+    
+    return(pow(product, 1.0/quantnum));
+}
+
+//Takes harmonic mean
+long double Nums::hmean(unsigned int quantnum){
+    double user_input{1};
+    double recip{0};
+
+    for(int i = 0; i < quantnum; i++){
+        std::cin >> user_input;
+        if(user_input == 0){
+            std::cout << "ERROR: dividing by ";
+            return(0);
+        }
+        recip = 1/user_input + recip;
+    }
+
+    return(quantnum/recip);
 }
 
 //Identifies if input is prime or not
