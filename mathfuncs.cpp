@@ -23,28 +23,6 @@ void Sequences::collatz(long int terminalnumber){
     }
 }
 
-//Prompts user to choose if they would like to find a term or the entire list of numbers leading up to the term.
-
-void Sequences::fibonacci(long int terminalnumber){
-    std::string func_choice{1};
-
-    std::cout << "Would you like to find the term or the sequence leading up to it? \'s\' for the sequence,";
-    std::cout << "\'t\' for the specific term." << std::endl;
-    std::cin >> func_choice;
-
-    if(func_choice == "s"){
-        fib_seq(terminalnumber);
-    }
-
-    else if(func_choice == "t"){
-        fib_term(terminalnumber);
-    }
-    else{
-        std::cout << "Error: not a valid input. Try again." << std::endl;
-        fibonacci(terminalnumber);
-    }
-}
-
 //If user would like to find entire sequence
 void Sequences::fib_seq(long int terminalnumber){
     long unsigned int set3[3]={1, 0, 0};
@@ -60,7 +38,7 @@ void Sequences::fib_seq(long int terminalnumber){
 }
 
 //If user would like to find only the term.
-void Sequences::fib_term(long int terminalnumber){
+long unsigned int Sequences::fib_term(long int terminalnumber){
     long unsigned int set3[3]={1, 0, 0};
     for (int i = 0; i < terminalnumber; i++) {
         //Like before, set3[2] is the specific number, while set3[0] and set3[1] store the previous two numbers.
@@ -69,7 +47,7 @@ void Sequences::fib_term(long int terminalnumber){
         set3[1] = set3[2];
     }
 
-    std::cout << set3[2];
+    return(set3[2]);
 }
 
 //Prints out all the possible ways where a number can be made with the sum of consecutive positive integers.
@@ -103,7 +81,7 @@ void Misc::friendly(long unsigned user_input) {
 }
 
 //Will count how many friendly sequences there are, but will not display them.
-void Misc::friendly_counter(long unsigned int user_input) {
+int Misc::friendly_counter(long unsigned int user_input) {
     int result{0};
     for(int i = 2; i * i / 2 < user_input; i++) {
         if (i % 2 == 0 && user_input % i != 0 && 2 * user_input % i == 0) {
@@ -112,11 +90,11 @@ void Misc::friendly_counter(long unsigned int user_input) {
             result=result+1;
         }
     }
-    std::cout << result;
+    return(result);
 }
 
 //Flips a number, and tells the user whether or not their number is a palindrome
-void Misc::palindrome(long int user_input) {
+long int Misc::reverse(long int user_input) {
     long int result{0};
     long int reverse{0};
     long int i{0};
@@ -131,16 +109,20 @@ void Misc::palindrome(long int user_input) {
         reverse = reverse + result * int(pow(10, digits - i));
     }
 
-    std::cout << reverse << ": ";
-    if (user_input == reverse) {
-        std::cout << "Your number is a palindrome!";
-    } else {
-        std::cout << "Your number is NOT a palindrome!";
+    return(reverse);
+}
+
+bool Misc::palindrome(long int user_input){
+    if(Misc::reverse(user_input) == user_input){
+        return(true);
+    }
+    else{
+        return(false);
     }
 }
 
-//For finding the GCD
-void Nums::gcd(long int num1, long int num2){
+//The GCD calculator
+long int Nums::gcd(long int num1, long int num2){
     long int divisor{1};
 
     //Cycles through values of i, to find if i is a possible factor.
@@ -151,54 +133,32 @@ void Nums::gcd(long int num1, long int num2){
         }
         i++;
     }
-
-    std::cout << divisor;
-}
-
-//The GCD calculator that is only used to calculate the LCM
-long int Nums::gcd_lcm(long int num1, long int num2){
-    long int divisor{1};
-
-    //Cycles through values of i, to find if i is a possible factor.
-    int i{1};
-    while(i<=num1 && i<=num2){
-        if(num1%i==0 && num2%i==0){
-            divisor=i;
-        }
-        i++;
-    }
-
     return(divisor);
 }
 
 //For finding the LCM
-void Nums::lcm(long int num1, long int num2){
-    gcd_lcm(num1, num2);
+long int Nums::lcm(long int num1, long int num2){
+    gcd(num1, num2);
 
     //Using LCM = (a*b)/GCD
-    std::cout << num1*num2/gcd_lcm(num1, num2);
+    return(num1*num2/gcd(num1, num2));
 }
 
 //Identifies if input is prime or not
 bool Primes::prime(long unsigned int prime1){
     int i{1};
     if(prime1 == 1){
-        std::cout << "Not prime";
         return(false);
     }
     if(prime1%2 == 0){
-        std::cout << "Not prime";
         return(false);
     }
     while(i <= (pow(prime1, 0.5)-1)/2){
         if(prime1 % (2*i + 1) == 0){
-            std::cout << "Not prime";
             return(false);
         }
         i++;
     }
-
-    std::cout << "Prime";
     return(false);
 }
 
