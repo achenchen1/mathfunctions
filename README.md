@@ -5,7 +5,13 @@ Finds the Collatz Sequence, the Fibonacci Sequence with a given number of terms,
 
 #### Last revised: 01/10/2018
 
-## v 2.01(01/10/2018)
+## v 3.0 (01/10/2018)
+
+* Changed into classes/member functions to organize (TENTATIVE)
+
+* Changed demo accordingly
+
+## v 2.01 (01/10/2018)
 
 * Reformatted demo file
 
