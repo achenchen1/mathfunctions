@@ -84,18 +84,20 @@ void friendly(long unsigned user_input) {
         //2*user_input%i instructs it to only look at quotients with 0.5, eliminating some exceptions such as n+0.75
         if (i%2 == 0 && user_input%i != 0 && 2*user_input%i == 0) {
             while (down < up - 1) {
+                std::cout << std::endl;
                 std::cout << down + 1 << " + ";
                 down++;
             }
-            std::cout << up << std::endl;  
+            std::cout << up;
         } 
         //Odd numbers take less work; as long as user_input is divisible, then there is a sequence
         else if (i % 2 == 1 && user_input % i == 0) {
             while (down < up) {
+                std::cout << std::endl;
                 std::cout << down << " + ";
                 down++;
             }
-            std::cout << up << std::endl;
+            std::cout << up;
         }
         i++;
     }
