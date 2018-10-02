@@ -1,5 +1,11 @@
 # Change log
 
+## v 1.02 (01/11/2018)
+
+* Now calculates harmonic, geometric, and arithmetic mean
+
+* Moved prime number functions under class ```Nums```
+
 ## v 1.01 (01/11/2018)
 
 * Eliminated extra lines on ```Misc::palindrome``` in ```mathfuncs.cpp```
