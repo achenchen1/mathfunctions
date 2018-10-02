@@ -1,5 +1,9 @@
 # Change log
 
+## v 1.01 (01/11/2018)
+
+* Eliminated extra lines on ```Misc::palindrome``` in ```mathfuncs.cpp```
+
 ## v 1.00 (01/10/2018)
 
 * Eliminated some intermediary functions
