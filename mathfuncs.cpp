@@ -170,7 +170,7 @@ void palindrome(long int user_input) {
         reverse = reverse + result * int(pow(10, digits - i));
     }
 
-    std::cout << reverse << std::endl;
+    std::cout << reverse << ": ";
     if (user_input == reverse) {
         std::cout << "Your number is a palindrome!";
     } else {
