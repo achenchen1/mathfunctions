@@ -48,9 +48,12 @@ void Misc::friendly(long unsigned user_input) {
         long int down = (user_input / i - i / 2);
         long int up = (user_input / i + i / 2);
 
-        //For even numbers, when the user_input is divided by i, it must a return 5 in the tenths digit, i.e. n+0.5
-        //(n represents an integer)
-        //2*user_input%i instructs it to only look at quotients with 0.5, eliminating some exceptions such as n+0.75
+        /* 
+        For friendly numbers where there are an even number of consecutive integers, then user_input%i must give a decimal
+        of 0.5; for example, 5/2 has a sequence of length 2, 2+3, and 5/2 = 2.5. 
+        i%2 checks if the sequence has an even number of digits, user_input%i checks that the user_input is not a multiple
+        of i, and 2*user_input%i == 0 ensures that the terminating decimal is 0.5 and not other decimals such as 0.75.
+        */
         if (i%2 == 0 && user_input%i != 0 && 2*user_input%i == 0) {
             while (down < up - 1) {
                 std::cout << down + 1 << " + ";
@@ -74,6 +77,7 @@ void Misc::friendly(long unsigned user_input) {
 int Misc::friendly_counter(long unsigned int user_input) {
     int result{0};
     for(int i = 2; i * i / 2 < user_input; i++) {
+        //See above in Misc::friendly(long unsigned user_input) for explanation of even-numbered sequences
         if (i % 2 == 0 && user_input % i != 0 && 2 * user_input % i == 0) {
             result = result + 1;
         }
