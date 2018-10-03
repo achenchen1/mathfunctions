@@ -1,5 +1,9 @@
 # Change log
 
+## v 1.03.1 (01/11/2018)
+
+* Attempted to better explain friendly number calculations where there are an even number of integers summing up to the user's input
+
 ## v 1.03 (01/11/2018)
 
 * Optimized Fibonacci functions using recursion
