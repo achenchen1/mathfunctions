@@ -1,5 +1,9 @@
 # Change log
 
+## v 1.04 (1/11/2018)
+
+* Started using data members instead of passing arguments into functions, but reverted Fibonacci functions to iteration (need to be fixed)
+
 ## v 1.03.1 (01/11/2018)
 
 * Attempted to better explain friendly number calculations where there are an even number of integers summing up to the user's input
