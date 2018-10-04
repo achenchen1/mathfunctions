@@ -4,7 +4,7 @@
 // if it's odd, multiply by 3 and add one
 // if it's even, divide by 2
 //and repeating this process, it will eventually terminate in the sequence "..., 4, 2, 1."
-void Sequences::collatz(long int terminalnumber){
+void Sequences::collatz(){
     if(terminalnumber <= 0){
         std::cout << "Please enter a positive integer.";
     }
@@ -20,37 +20,44 @@ void Sequences::collatz(long int terminalnumber){
             }
             std::cout << terminalnumber << " ";
         }
+        std::cout << "2 1";
     }
 }
 
 //If user would like to find entire sequence
-void Sequences::fib_seq(long int terminalnumber){
-    for(int i = 1; i <= terminalnumber; i++){
-        std::cout << fib_term(i) << " ";
+void Sequences::fib_seq(){
+    long unsigned int array[3] = {1, 0, 0};
+    for(int i = 0; i < terminalnumber; i++){
+        array[2] = array[0] + array[1];
+        array[0] = array[1];
+        array[1] = array[2];
+
+        std::cout << array[2] << " ";
     }
 }
 
 //If user would like to find only the term.
-long unsigned int Sequences::fib_term(long int terminalnumber){
-    if(terminalnumber==1 or terminalnumber == 2){
-        return(1);
+long unsigned int Sequences::fib_term(){
+    long unsigned int array[3] = {1, 0, 0};
+    for(int i = 0; i < terminalnumber; i++){
+        array[2] = array[0] + array[1];
+        array[0] = array[1];
+        array[1] = array[2];
     }
-    else {
-        return(fib_term(terminalnumber - 1) + fib_term(terminalnumber - 2));
-    }
+    return(array[2]);
 }
 
 //Prints out all the possible ways where a number can be made with the sum of consecutive positive integers.
 //Note: user_input as a 1-term friendly sequence is not counted.
-void Misc::friendly(long unsigned user_input) {
+void Misc::friendly() {
     int i{1};
     while (i * i / 2 < user_input) {
         long int down = (user_input / i - i / 2);
         long int up = (user_input / i + i / 2);
 
-        /* 
+        /*
         For friendly numbers where there are an even number of consecutive integers, then user_input%i must give a decimal
-        of 0.5; for example, 5/2 has a sequence of length 2, 2+3, and 5/2 = 2.5. 
+        of 0.5; for example, 5/2 has a sequence of length 2, 2+3, and 5/2 = 2.5.
         i%2 checks if the sequence has an even number of digits, user_input%i checks that the user_input is not a multiple
         of i, and 2*user_input%i == 0 ensures that the terminating decimal is 0.5 and not other decimals such as 0.75.
         */
@@ -74,7 +81,7 @@ void Misc::friendly(long unsigned user_input) {
 }
 
 //Will count how many friendly sequences there are, but will not display them.
-int Misc::friendly_counter(long unsigned int user_input) {
+int Misc::friendly_counter() {
     int result{0};
     for(int i = 2; i * i / 2 < user_input; i++) {
         //See above in Misc::friendly(long unsigned user_input) for explanation of even-numbered sequences
@@ -89,7 +96,7 @@ int Misc::friendly_counter(long unsigned int user_input) {
 }
 
 //Flips a number, and tells the user whether or not their number is a palindrome
-long int Misc::reverse(long int user_input) {
+long int Misc::reverse() {
     long int result{0};
     long int reverse{0};
     long int i{0};
@@ -108,18 +115,18 @@ long int Misc::reverse(long int user_input) {
 }
 
 //Determines whether or not your number is a palindrome
-bool Misc::palindrome(long int user_input) {
-    return(reverse(user_input) == user_input);
+bool Misc::palindrome() {
+    return(reverse() == user_input);
 }
 
 //The GCD calculator
-long int Nums::gcd(long int num1, long int num2){
-    long int divisor{1};
+long unsigned int Nums::gcd(){
+    long unsigned int divisor{1};
 
     //Cycles through values of i, to find if i is a possible factor.
-    int i{1};
-    while(i<=num1 && i<=num2){
-        if(num1%i==0 && num2%i==0){
+    long unsigned int i{1};
+    while(i<=primary_input && i<=secondary_input){
+        if(primary_input%i==0 && secondary_input%i==0){
             divisor=i;
         }
         i++;
@@ -128,45 +135,45 @@ long int Nums::gcd(long int num1, long int num2){
 }
 
 //For finding the LCM
-long int Nums::lcm(long int num1, long int num2){
-    gcd(num1, num2);
+long unsigned int Nums::lcm(){
+    gcd();
 
     //Using LCM = (a*b)/GCD
-    return(num1*num2/gcd(num1, num2));
+    return(primary_input*secondary_input/gcd());
 }
 
 //Takes arithmetic mean
-long double Nums::amean(unsigned int quantnum){
+long double Nums::amean(){
     double user_input{1};
     double sum{0};
 
-    for(int i = 0; i < quantnum; i++){
+    for(int i = 0; i < primary_input; i++){
         std::cin >> user_input;
         sum = sum + user_input;
     }
 
-    return(sum/quantnum);
+    return(sum/primary_input);
 }
 
 //Takes geometric mean
-long double Nums::gmean(unsigned int quantnum){
+long double Nums::gmean(){
     double user_input{1};
     double product{1};
 
-    for(int i = 0; i < quantnum; i++){
+    for(int i = 0; i < primary_input; i++){
         std::cin >> user_input;
         product = product * user_input;
     }
 
-    return(pow(product, 1.0/quantnum));
+    return(pow(product, 1.0/primary_input));
 }
 
 //Takes harmonic mean
-long double Nums::hmean(unsigned int quantnum){
+long double Nums::hmean(){
     double user_input{1};
     double recip{0};
 
-    for(int i = 0; i < quantnum; i++){
+    for(int i = 0; i < primary_input; i++){
         std::cin >> user_input;
         if(user_input == 0){
             std::cout << "ERROR: dividing by ";
@@ -175,49 +182,33 @@ long double Nums::hmean(unsigned int quantnum){
         recip = 1/user_input + recip;
     }
 
-    return(quantnum/recip);
-}
-
-//Identifies if input is prime or not
-bool Nums::prime(long unsigned int prime1){
-    int i{1};
-    if(prime1 == 1){
-        return(false);
-    }
-    if(prime1%2 == 0){
-        return(false);
-    }
-    while(i <= (pow(prime1, 0.5)-1)/2){
-        if(prime1 % (2*i + 1) == 0){
-            return(false);
-        }
-        i++;
-    }
-    return(false);
+    return(primary_input/recip);
 }
 
 //Using primebool, returns primes within range
-void Nums::primerange(long int prime1, long int prime2){
-    while(prime1 <= prime2) {
-        if(primebool(prime1)) {
-            std::cout << prime1 << std::endl;
+void Nums::primerange(){
+    while(primary_input <= secondary_input) {
+        if(primebool()) {
+            std::cout << primary_input << std::endl;
         }
-        prime1++;
+        primary_input++;
     }
 }
 
 //Returns a bool to whether input is prime or not
-bool Nums::primebool(long int prime1){
+bool Nums::primebool(){
     int i{1};
-    if(prime1%2 == 0){
+    if(primary_input == 1) {
+        return (false);
+    }
+    if(primary_input%2 == 0){
         return(false);
     }
-    while(i <= (pow(prime1, 0.5)-1)/2){
-        if(prime1 % (2*i + 1) == 0){
+    while(i <= (pow(primary_input, 0.5)-1)/2){
+        if(primary_input % (2*i + 1) == 0){
             return(false);
         }
         i++;
     }
-
     return(true);
 }
